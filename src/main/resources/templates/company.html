@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Company</title>
+</head>
+<body>
+<div>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>size</th>
+            <th>address</th>
+            <td>action</td>
+        </tr>
+        <tr th:each="company: ${company}">
+
+            <td th:text="${company.id}"> </td>
+            <td th:text="${company.name}"> </td>
+            <td th:text="${company.size}"> </td>
+            <td th:text="${company.address}"> </td>
+            <td>
+                <a href="/company/add">add</a>
+                <a th:href="@{/company/delete/{id}(id=${company.getId()})}">delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

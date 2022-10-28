@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add</title>
+</head>
+<body>
+<div>
+    <form action="/company/add" method="post">
+        <input type="text" name="name" placeholder="Input name">
+        <input type="number" min="1" max="100" name="size">
+        <select name="address">
+            <option th:each="address:${companyaddress}" th:text="${address.name()}"th:value="${address.name()}"></option>
+        </select>
+        <input type="submit" value="add">
+    </form>
+</div>
+</body>
+</html>
